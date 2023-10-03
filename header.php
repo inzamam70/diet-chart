@@ -11,5 +11,8 @@
         <a href="./faq.php">FAQs</a>
         <a href="./specialist.php">Specialist</a>
         <a href="./login.php">Login</a>
+        <a href="./generate.php">Diet Chart Generate</a>
+        
+
     </div>
 </div>
