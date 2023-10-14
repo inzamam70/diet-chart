@@ -13,30 +13,7 @@
 </head>
 
 <body>
-   <!-- <div class="body">
-       
-        <?php include('./header.php') ?>
-      
 
-        <div class="bmi-body">
-            <div class="container">
-                <h2>Bmi Calculetor</h2>
-                <p class="text">Height</p>
-                <input type="text" id="height">
-                <p class="text">Weight</p>
-                <input type="text" id="weight">
-                <p id="result"></p>
-                <button id="btn" onclick="bmi()">Calculate</button>
-                <p id="info">Please enter height[cm] & weight [kg]</p>
-            </div>
-        </div>
-
-
-
-
-        <?php include('./footer.php') ?>
-
-    </div>  -->
 
     <div class="body">
         <!-- header start -->

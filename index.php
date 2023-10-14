@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=h1, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/special.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -25,7 +26,7 @@
         <!-- services -->
         <?php include('./service.php')?>
         <!-- service end -->
-        
+        <?php include('./specialist.php') ?>
 
         <!-- footer -->
         <?php include('./footer.php') ?>

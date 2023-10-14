@@ -9,9 +9,10 @@
         <a href="./bmi.php">BMI</a>
         <a href="./contact.php">Contact us</a>
         <a href="./faq.php">FAQs</a>
-        <a href="./specialist.php">Specialist</a>
+        <a href="blog.php">Blogs</a>
+        <a href="./generate.php">Diet Chart</a>
         <a href="./login.php">Login</a>
-        <a href="./generate.php">Diet Chart Generate</a>
+     
         
 
     </div>
