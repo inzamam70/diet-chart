@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/contact.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
@@ -51,31 +49,50 @@
                 </div>
                 <div class="contact-form">
                     <h2>Send a Message</h2>
-                    <div class="form-box">
+
+                    <?php 
+                    include_once 'conn.php';
+                    if(isset($_POST['submit'])){
+                        $fristname = $_POST['fristname'];
+                        $lastname = $_POST['lastname'];
+                        $email = $_POST['email'];
+                        $phone = $_POST['phone'];
+                        $sms = $_POST['sms'];
+
+                        $sql = "INSERT INTO contact (fristname, lastname, email, phone, sms) VALUES ('$fristname', '$lastname', '$email', '$phone', '$sms')";
+                        $result = mysqli_query($conn, $sql);
+                        if($result){
+                            echo "<script>alert('Message Send Successfully')</script>";
+                        }else{
+                            echo "<script>alert('Message Send Failed')</script>";
+                        }
+                    }
+                    ?>
+                    <form action="" method="post" class="form-box">
                         <div class="inputbox w50">
-                            <input type="text" name="" required>
+                            <input type="text" name="fristname" required>
                             <span>First Name</span>
                         </div>
                         <div class="inputbox w50">
-                            <input type="text" name="" required>
+                            <input type="text" name="lastname" required>
                             <span>Last Name</span>
                         </div>
                         <div class="inputbox w50">
-                            <input type="email" name="" required>
+                            <input type="email" name="email" required>
                             <span>Email Address</span>
                         </div>
                         <div class="inputbox w50">
-                            <input type="number" name="" required>
+                            <input type="number" name="phone" required>
                             <span>Mobile Number</span>
                         </div>
                         <div class="inputbox w100">
-                            <textarea name="" required></textarea>
+                            <textarea name="sms" required></textarea>
                             <span>Write your message here...</span>
                         </div>
                         <div class="inputbox w100">
-                            <input type="submit" value="Send">
+                            <input type="submit" name="submit" value="Send">
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>

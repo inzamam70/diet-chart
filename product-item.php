@@ -41,7 +41,7 @@
 
                 <div class="product-card-item">
                     <div class="card-img-item">
-                        <img src="<?= $row['image'] ?>" alt="" style="width:250px;height:200px;">
+                        <img src="<?= $row['image'] ?>" alt="" style="width:200px;height:200px;">
                     </div>
                     <div class="product-card-content-item">
                         <h3><?= $row['title'] ?></h3>

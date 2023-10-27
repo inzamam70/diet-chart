@@ -1,6 +1,6 @@
 <div class="header ">
     <div class="logo-section">
-        <img src="./css/logo.png" alt="" class="header-logo">
+        <img src="./css/fruit-chart.png" alt="" class="header-logo">
         <h3>Diet-chart</h3>
     </div>
     <div class="header-nav">

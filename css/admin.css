@@ -11,6 +11,8 @@ body {
 
 .template {
     display: flex;
+    width: 100%;
+
 }
 
 .nav-item {
@@ -147,11 +149,87 @@ body {
 }
 .body{
     display: flex;
-    padding: 10px;
+   padding: 20px;
     flex-direction: column;
 }
 .btn{
 
     border-radius: 10px;
     padding: 10px;
+}
+
+.admin-table{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;  
+    margin-top: 30px;
+}
+.table-sms{
+    width: 700px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+.table-sms thead{
+    background: #200d0d;
+    color: #fff;
+     
+}
+.table-sms th{
+    padding: 10px;
+    text-align: center;
+}
+.table-sms td{
+    padding: 10px;
+    text-align: center;
+}
+.table-sms tbody tr:nth-child(odd){
+    background: #e26f6f;
+}
+.table-sms tbody tr:nth-child(even){
+    background: #31e404;
+}
+.table-sms tbody tr:nth-child(1){
+    background: #ffffff;
+}
+.table-sms tbody tr:nth-child(2){
+    background: #259fc4;
+}
+.table-user{
+    width: 500px;
+    height: 100%;
+    background: #f07070;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.table-user thead{
+    background: #200d0d;
+    color: #fff;
+     
+}
+.table-user th{
+    padding: 10px;
+    text-align: center;
+}
+.table-user td{
+    padding: 10px;
+    text-align: center;
+}
+.table-user tbody tr:nth-child(odd){
+    background: #61eb11;
+}
+.table-user tbody tr:nth-child(even){
+    background: #fff;
+}
+.table-user tbody tr:nth-child(1){
+    background: #63d318;
+}
+.table-user tbody tr:nth-child(2){
+    background: #ffffff;
 }

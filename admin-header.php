@@ -3,7 +3,8 @@
 
 
     <div>
-        <img src="./css/logo.png" alt="" class="img">
+        <img src="./css/fruit-chart.png" alt="" class="img">
+        
     </div>
   
         <div class="header-item" style="display:flex;gap:10px;justify-content:space-between;">

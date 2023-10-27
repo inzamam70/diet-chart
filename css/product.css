@@ -21,9 +21,14 @@
     position: relative;
 	width: 320px;
 	height: 420px;
-	background: #411241;
+	background: #ffffff;
 	border-radius: 20px;
 	overflow: hidden;
+    border: 2px solid #2196f3;
+}
+.product-card-item:hover{
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 10px #2196f3;
 }
 .card-img-item{
     position: relative;
@@ -37,7 +42,7 @@
 .card-img-item img{
     max-width: 100%;
     transition: 0.5s;
-    border-radius: 40px;
+    border-radius: 10px;
 }
 .product-card-content-item{
     position: relative;
@@ -50,12 +55,12 @@
 }
 .product-card-content-item h3{
     font-size: 24px;
-    color: #fff;
+    color: #000000;
     text-align: center;
 }
 .product-card-content-item p{
     font-size: 18px;
-    color: #fff;
+    color: #000000;
     text-align: center;
 }
 .card-btn-item{
@@ -63,7 +68,7 @@
     margin-top: 20px;
     padding: 10px 30px;
     text-decoration: none;
-    color: #fff;
+    color: #000000;
     border-radius: 30px;
     background-color: #2196f3;
 }

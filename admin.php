@@ -12,7 +12,7 @@ if (!isset($_SESSION['admin_name'])) {
 <html lang="en">
 
 <head>
-   
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -27,37 +27,118 @@ if (!isset($_SESSION['admin_name'])) {
 </head>
 
 <body>
- 
+
     <?php include('admin-header.php') ?>
 
-   
+
     <div class="template">
         <?php include('admin-nav.php') ?>
 
         <div class="body">
             <h1>Health Care</h1>
-          
-            <div class="card-body">
+
+            <div class="">
                 <a href="" class="btn btn-success "><i class="fa-solid fa-file" style="padding: 5px;"></i>New </a>
-                <a href="" class="btn btn-primary"><i class="fa-solid fa-spinner" style="padding: 5px;"></i>Progress </a>
-                <a href="" class="btn btn-warning"><i class="fa-solid fa-circle-check" style="padding: 5px;"></i>Accepted </a>
-                <a href="" class="btn btn-danger"><i class="fa-solid fa-check" style="padding: 5px;"></i>Finish</a>
-                
+                <?php 
+                include_once 'conn.php';
+                $sql = "SELECT * FROM users";
+                $result = mysqli_query($conn, $sql);
+                $count = mysqli_num_rows($result);
+                ?>
+                <a href="" class="btn btn-primary"><i class="fa-solid fa-users" style="padding: 5px;"></i>Users <span><sup><?=$count?></sup></span></a>
+                <?php 
+                 $sql = "SELECT * FROM contact";
+                    $result = mysqli_query($conn, $sql);
+                    $count = mysqli_num_rows($result);
+                ?>
+                <a href="" class="btn btn-warning"><i class="fa-solid fa-users" style="padding: 5px;"></i>Massages <span><sup><?=$count?></sup></span></a>
+                <a href="" class="btn btn-danger"><i class="fa-solid fa-check" style="padding: 5px;"></i>Finished</a>
+
+            </div>
+            <div class="admin-table">
+               <div class="table-sms">
+               <h2>Massages</h2>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Phone-No</th>
+                            <th scope="col">Massages</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php 
+                         include_once 'conn.php';
+                            $sql = "SELECT * FROM contact";
+                            $result = mysqli_query($conn, $sql);
+                            $id = 1;
+                            while ($row = mysqli_fetch_assoc($result)) {
+                        ?>
+                        <tr>
+                            <th scope="row"><?= $id++?></th>
+                            <td><?= $row['fristname']?><?=$row['lastname']?></td>
+                            <td><?= $row['email']?></td>
+                            <td><?= $row['phone']?></td>
+                            <td><?= $row['sms']?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+               </div>
+
+               <div class="table-user">
+               <h2>Users</h2>
+          
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">No.</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">User-type</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php 
+               include_once 'conn.php';
+                $sql = "SELECT * FROM users";
+                $result = mysqli_query($conn, $sql);
+                $id = 1;
+                while ($row = mysqli_fetch_assoc($result)) {
+               ?>
+                        <tr>
+                            <th scope="row"><?= $id++?></th>
+                            <td><?= $row['name']?></td>
+                            <td><?=$row ['email']?></td>
+                            <td><?=$row ['user_type']?></td>
+                        </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+               </div>
+
+              
             </div>
 
+          
+
         </div>
+
+
     </div>
 
 
 
 
- 
 
 
 
 
 
-    
+
+
     <?php include('admin-footer.php') ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

@@ -61,7 +61,7 @@ if (isset($_POST['submit'])) {
 
             <div class="from-body">
                 <div class="title">
-                    <h1 class="title-item">Ceate Category</h1>
+                    <h1 class="title-item">Edit Slider</h1>
                 </div>
 
                 <div class="form">
@@ -105,7 +105,7 @@ if (isset($_POST['submit'])) {
                         ?>
                         
                         ">
-                        <input type="submit" class="btn btn-warning" value="Submit" name="submit" style="width:100%;">
+                        <input type="submit" class="btn btn-danger" value="Submit" name="submit" style="width:100%;">
                     </form>
                 </div>
 

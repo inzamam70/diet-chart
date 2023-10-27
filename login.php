@@ -54,7 +54,10 @@ if (isset($_POST['submit'])) {
             <div class="background"></div>
             <div class="login-container">
                 <div class="login-content">
-                    <h2 class="logo">Diet-Chart</h2>
+                    <div class="img">
+                        <img src="./css/fruit-chart.png" alt="">    
+                        <h2 class="logo"> Diet-Chart</h2>
+                    </div>
                     <div class="text-sci">
                         <h2>Welcome! <br><span>To our Website</span></h2>
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, veniam.</p>

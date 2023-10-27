@@ -387,16 +387,17 @@ body{
 	z-index: 1;
 }
 .cardimg img{
-	max-width: 100%;
+	width: 200px;
+	height: 200px;
 	transition: 0.5s;
 }
-.card:hover img{
-	max-width: 50%;
-}
+/* .card:hover img{
+	transform: scale(1.2);
+} */
 .card-content{
 	position: relative;
-	padding: 20px;
 	display: flex;
+	margin-top: 15px;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;

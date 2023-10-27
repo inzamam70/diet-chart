@@ -13,7 +13,7 @@
         ?>
             <div class="card">
                 <div class="cardimg">
-                    <img src="<?= $row['image'] ?>" alt="" style="width:200px;height:250px;">
+                    <img src="<?= $row['image'] ?>" alt="">
                 </div>
                 <div class="card-content">
                     <h3><?= $row['name'] ?></h3>
