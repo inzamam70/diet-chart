@@ -4,7 +4,7 @@
         <h3>Diet-chart</h3>
     </div>
     <div class="header-nav">
-        <a href="./index.php">Home</a>
+        <a href="index.php">Home</a>
         <a href="./about.php">About</a>
         <a href="./bmi.php">BMI</a>
         <a href="./contact.php">Contact us</a>

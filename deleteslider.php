@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once("conn.php");
 $id=$_GET["id"];
 $sql="DELETE FROM sliders WHERE id='$id'";

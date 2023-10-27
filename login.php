@@ -1,3 +1,33 @@
+<?php 
+session_start();
+include_once 'conn.php';
+if (isset($_POST['submit'])) {
+
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $pass = md5($_POST['password']);
+
+    $select = " SELECT * FROM users WHERE email = '$email' && password = '$pass' ";
+
+    $result = mysqli_query($conn, $select);
+
+    if (mysqli_num_rows($result) > 0) {
+
+        $row = mysqli_fetch_array($result);
+       
+        if ($row['user_type'] == 'admin') {
+            $_SESSION['admin_name'] = $row['name'];
+            header('location:admin.php');
+        } else {
+            $_SESSION['user_name'] = $row['name'];
+            header('location:index.php');
+        }
+    } else {
+        $error[] = 'incorrect email or password!';
+    }
+};
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,26 +68,34 @@
                 </div>
                 <div class="logreg-box">
                     <div class="form-box login">
-                        <form action="">
+                        <form action="" method="post">
                             <h2>Login here</h2>
-
+                            <?php
+                            if (isset($error)) {
+                                foreach ($error as $error) {
+                                    echo '<span class="error-msg">' . $error . '</span>';
+                                }
+                                ;
+                            }
+                            ;
+                            ?>
                             <div class="input-box">
                                 <span class="icon"><i class='bx bxs-envelope'></i></span>
-                                <input type="email" name="" required>
-                                <label for="">Email</label>
+                                <input type="email" name="email" required>
+                                <label for="email">Email</label>
                             </div>
 
                             <div class="input-box">
                                 <span class="icon"><i class='bx bxs-lock-alt'></i></span>
-                                <input type="password" name="" required>
-                                <label for="">Password</label>
+                                <input type="password" name="password" required>
+                                <label for="password">Password</label>
                             </div>
 
                             <div class="remember-forgot">
                                 <label><input type="checkbox">Remember me</label>
                                 <a href="">Forgot Password?</a>
                             </div>
-                            <button type="submit" class="log-btn">Sign In</button>
+                            <button type="submit" name="submit" class="log-btn">Sign In</button>
                             <div class="login-register">
                                 <p>Don't have anaccount? <a href="./register.php" class="register-link">Sign up</a></p>
                             </div>

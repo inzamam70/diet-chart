@@ -1,9 +1,11 @@
+
+
 <?php
 session_start();
 include_once("conn.php");
 $id = $_GET["id"];
 if (isset($_POST['submit'])) {
-    $title = $_POST['title'];
+    $name = $_POST['name'];
     $description = $_POST['description'];
     $targetDir = "uploads/";
     $targetFile = $targetDir . basename($_FILES["image"]["name"]);
@@ -14,13 +16,13 @@ if (isset($_POST['submit'])) {
     $img_name = $_FILES['image']['name'];
     $path = "./uploads/" . $img_name;
     move_uploaded_file($img_loc, './uploads/' . $img_name);
-    $sql = "UPDATE sliders SET title='$title',description='$description',image='$path' WHERE id='$id'";
+    $sql = "UPDATE special SET name='$name',description='$description',image='$path' WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
-        echo "<script>alert('Slider Updated Successfully')</script>";
-        echo "<script>window.location.href='./sliders.php'</script>";
+        echo "<script>alert('Specilist Updated Successfully')</script>";
+        echo "<script>window.location.href='./specialists.php'</script>";
     } else {
-        echo "<script>alert('Slider Inserted Failed')</script>";
+        echo "<script>alert('Specialist Inserted Failed')</script>";
     }
 }
 
@@ -61,19 +63,19 @@ if (isset($_POST['submit'])) {
 
             <div class="from-body">
                 <div class="title">
-                    <h1 class="title-item">Ceate Category</h1>
+                    <h1 class="title-item">Edit Specialist</h1>
                 </div>
 
                 <div class="form">
                     <form action="" class="form-item" method="post" enctype="multipart/form-data">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" value="
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" value="
                         <?php
-                        $sql = "SELECT * FROM sliders WHERE id='$id'";
+                        $sql = "SELECT * FROM special WHERE id='$id'";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                echo $row['title'];
+                                echo $row['name'];
                             }
                         }
 
@@ -83,7 +85,7 @@ if (isset($_POST['submit'])) {
                         <label for="description">Description</label>
                         <input type="text" name="description" class="form-control" value="
                         <?php
-                        $sql = "SELECT * FROM sliders WHERE id='$id'";
+                        $sql = "SELECT * FROM special WHERE id='$id'";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -92,10 +94,11 @@ if (isset($_POST['submit'])) {
                         }
                         ?>
                         ">
+
                         <label for="image">Image</label>
                         <input type="file" name="image" class="form-control" accept="image/*" value="
                         <?php
-                        $sql = "SELECT * FROM sliders WHERE id='$id'";
+                        $sql = "SELECT * FROM special WHERE id='$id'";
                         $result = mysqli_query($conn, $sql);
                         if (mysqli_num_rows($result) > 0) {
                             while ($row = mysqli_fetch_assoc($result)) {
@@ -105,7 +108,7 @@ if (isset($_POST['submit'])) {
                         ?>
                         
                         ">
-                        <input type="submit" class="btn btn-warning" value="Submit" name="submit" style="width:100%;">
+                        <input type="submit" class="btn btn-danger" value="Submit" name="submit" style="width:100%;">
                     </form>
                 </div>
 

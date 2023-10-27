@@ -35,6 +35,7 @@
                     <h1 class="title-item">Edit Product</h1>
                 </div>
                 <?php
+                session_start();
                 include_once "conn.php";
                 $id = $_GET['id'];
                 if(isset($_POST['submit'])){

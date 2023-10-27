@@ -1,4 +1,11 @@
-<?php ?>
+<?php
+session_start();
+include_once 'conn.php';
+if (!isset($_SESSION['admin_name'])) {
+    header('location:login.php');
+}
+
+?>
 
 
 <!DOCTYPE html>

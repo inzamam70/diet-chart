@@ -1,3 +1,4 @@
+
 <?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,12 +30,12 @@
 
             <div class="from-body">
                 <div class="title">
-                    <h1 class="title-item">Blogs</h1>
+                    <h1 class="title-item">Specialists</h1>
                 </div>
 
                 <div class="form">
                     <div class="from-btn">
-                        <a href="add-blog.php" class="btn btn-warning"><i class="fa-solid fa-plus"></i></a>
+                        <a href="add-special.php" class="btn btn-warning"><i class="fa-solid fa-plus"></i></a>
                         <a href="admin.php" class="btn btn-danger">Back</a>
                     </div>
                     <div class="table-container">
@@ -42,9 +43,8 @@
                             <thead class="table-item">
                                 <tr>
                                     <th>Sl</th>
-                                    <th>Title</th>
+                                    <th>Name</th>
                                     <th>Description</th>
-                                    <th>Date</th>
                                     <th>Image</th>
                                     <th>Action</th>
                                 </tr>
@@ -52,7 +52,7 @@
                             <tbody>
                                 <?php
                                 require_once('conn.php');
-                                $sql = "SELECT * FROM `blogs`";
+                                $sql = "SELECT * FROM `special`";
                                 $result = mysqli_query($conn, $sql);
                                 $id = 1;
                                 while ($row = mysqli_fetch_assoc($result)) {
@@ -61,14 +61,13 @@
 
                                     <tr>
                                         <td><?php echo $id++ ?></td>
-                                        <td><?php echo $row['title'] ?></td>
+                                        <td><?php echo $row['name'] ?></td>
                                         <td><?php echo $row['description'] ?></td>
-                                        <td><?php echo $row['date'] ?></td>
                                         <td><img src="<?php echo $row['image'] ?> " width='100px' height='70px'></td>
                                         <td>
                                             <div class="action-btn">
-                                                <a href="./edit-blog.php?id=<?php echo $row['id'] ?>" class="btn btn-primary"><i class="fa-solid fa-pen-nib"></i></a>
-                                                <a href="./delete-blog.php?id=<?php echo $row['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
+                                                <a href="./edit-special.php?id=<?php echo $row['id'] ?>" class="btn btn-primary"><i class="fa-solid fa-pen-nib"></i></a>
+                                                <a href="./delete-special.php?id=<?php echo $row['id'] ?>" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a>
 
                                             </div>
 

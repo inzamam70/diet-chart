@@ -27,51 +27,26 @@
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
             </div>
             <div class="post-section">
-
+                <?php 
+                include_once('conn.php');
+                $sql = "SELECT * FROM blogs";
+                $result = mysqli_query($conn, $sql);
+                while($row = mysqli_fetch_assoc($result)){
+                    ?>
+               
                 <div class="post">
                     <div>
-                        <img src="./css/_MG_7999.JPG" alt="" style="width:150px;height:150px;">
+                        <img src="<?= $row['image']?>" alt="" style="width:150px;height:150px;">
                     </div>
                     <div>
-                        <h2>First Blog Post</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida elit eget justo
-                            semper.</p>
-                        <p class="date">Posted on October 6, 2023</p>
+                        <h2><?= $row['title']?></h2>
+                        <p><?= $row['description']?></p>
+                        <p class="date"><?= $row['date']?></p>
                     </div>
                 </div>
-                <div class="post">
-                    <div>
-                        <img src="./css/_MG_7999.JPG" alt="" style="width:150px;height:150px;">
-                    </div>
-                    <div>
-                        <h2>Second Blog Post</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida elit eget justo
-                            semper.</p>
-                        <p class="date">Posted on October 6, 2023</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <div>
-                        <img src="./css/_MG_7999.JPG" alt="" style="width:150px;height:150px;">
-                    </div>
-                    <div>
-                        <h2>Third Blog Post</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida elit eget justo
-                            semper.</p>
-                        <p class="date">Posted on October 6, 2023</p>
-                    </div>
-                </div>
-                <div class="post">
-                    <div>
-                        <img src="./css/_MG_7999.JPG" alt="" style="width:150px;height:150px;">
-                    </div>
-                    <div>
-                        <h2>Fourth Blog Post</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam gravida elit eget justo
-                            semper.</p>
-                        <p class="date">Posted on October 6, 2023</p>
-                    </div>
-                </div>
+                 <?php
+                }
+                ?>
 
                 
 

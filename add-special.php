@@ -1,3 +1,4 @@
+
 <?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,12 +33,12 @@
 
             <div class="from-body">
                 <div class="title">
-                    <h1 class="title-item">Ceate Slider</h1>
+                    <h1 class="title-item">Add Specialist</h1>
                 </div>
                 <?php
                 include_once("conn.php");
                 if (isset($_POST["submit"])) {
-                    $title = $_POST["title"];
+                    $name = $_POST["name"];
 
                     $description = $_POST["description"];
 
@@ -53,16 +54,16 @@
                     $img_name = $_FILES['image']['name'];
                     $path = "./uploads/" . $img_name;
                     move_uploaded_file($img_loc, './uploads/' . $img_name);
-                    $sql = "INSERT INTO sliders(title,description,image) VALUES('$title','$description','$path')";
+                    $sql = "INSERT INTO special(name,description,image) VALUES('$name','$description','$path')";
                     $result = mysqli_query($conn, $sql);
                     if ($result) {
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> Slider Added Successfully.
+                        <strong>Success!</strong> Specialist Added Successfully.
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                       </div>';
                     } else {
                         echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Error!</strong> Slider Not Added.
+                            <strong>Error!</strong> Specialist Not Added.
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>';
                     }
@@ -72,8 +73,8 @@
 
                 <div class="form">
                     <form action="" class="form-item" method="post" enctype="multipart/form-data">
-                        <label for="title">Title</label>
-                        <input type="text" name="title" class="form-control" placeholder="Enter Title">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" class="form-control" placeholder="Enter name">
                         <label for="description">Description</label>
                         <input type="text" name="description" class="form-control" placeholder="Enter Description">
                         <label for="image">Image</label>

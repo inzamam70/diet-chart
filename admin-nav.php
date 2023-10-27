@@ -8,74 +8,46 @@
             <a href="index.php"><i class="fas fa-home"></i>home</a>
         </li>
         <li class="menu">
-            <a href="" class="dropdown">
+            <a href="sliders.php" class="dropdown">
                 <div>
                     <i class="fas fa-sliders"></i>
-                    Slider
+                    Sliders
                 </div>
-
-                <i class="fa fa-angle-right"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="sliders.php">Sliders</a></li>
-                <li><a href="add-slider.php">Create Slider</a></li>
-            </ul>
+          
         </li>
         <li class="menu">
-            <a href="" class="dropdown">
+            <a href="categories.php" class="dropdown">
                 <div>
                     <i class="fas fa-list"></i>
-                    Service Category
+                    Service Categories
                 </div>
-                <i class="fa fa-angle-right"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="categories.php">Categories</a></li>
-                <li><a href="add-category.php">Add Category</a></li>
-            </ul>
         </li>
 
         <li class="menu">
-            <a href="" class="dropdown">
+            <a href="products.php" class="dropdown">
                 <div>
                     <i class="fa-brands fa-first-order"></i>
-                    Product
+                    Products
                 </div>
-
-                <i class="fa fa-angle-right"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="products.php">Products</a></li>
-                <li><a href="add-products.php">Add Product</a></li>
-            </ul>
         </li>
         <li class="menu">
-            <a href="" class="dropdown">
+            <a href="blogs.php" class="dropdown">
                 <div>
                 <i class="fa-solid fa-blog"></i>
-                    Blog
+                    Blogs
                 </div>
-
-                <i class="fa fa-angle-right"></i>
             </a>
-            <ul class="sub-menu">
-                <li><a href="blogs.php">Blogs</a></li>
-                <li><a href="add-blog.php">Create Blog</a></li>
-            </ul>
         </li>
         <li class="menu">
-            <a href="" class="dropdown">
+            <a href="specialists.php" class="dropdown">
                 <div>
                 <i class="fa-solid fa-users"></i>
-                    Specialist
+                    Specialists
                 </div>
-
-                <i class="fa fa-angle-right"></i>
-            </a>
-            <ul class="sub-menu">
-                <li><a href="specialists.php">Specialists</a></li>
-                <li><a href="add-specialists.php">Create Specialist</a></li>
-            </ul>   
+            </a>  
         </li>
 
         <li class="menu">

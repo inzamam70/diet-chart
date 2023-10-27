@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include_once("conn.php");
 $id = $_GET["id"];
 if (isset($_POST['submit'])) {

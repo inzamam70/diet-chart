@@ -1,6 +1,6 @@
 
 <?php
-
+session_start();
 include_once "conn.php";
 $id = $_GET['id'];
 $sql = "DELETE FROM blogs WHERE id='$id'";

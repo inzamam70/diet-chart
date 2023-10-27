@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 include_once("conn.php");
 $id = $_GET["id"];
 if (isset($_POST['submit'])) {
@@ -62,7 +63,7 @@ if (isset($_POST['submit'])) {
 
             <div class="from-body">
                 <div class="title">
-                    <h1 class="title-item">Ceate Category</h1>
+                    <h1 class="title-item">Edit Blog</h1>
                 </div>
 
                 <div class="form">

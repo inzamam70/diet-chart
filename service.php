@@ -1,71 +1,28 @@
 <div class="service">
-            <div class="service-heading">
-                <h1>Our Services</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    <div class="service-heading">
+        <h1>Our Service</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+    </div>
+    <div class="card-section">
+        <?php
+        include_once "conn.php";
+        $sql = "SELECT * FROM categories";
+        $result = mysqli_query($conn, $sql);
+        $id = 1;
+        while ($row = mysqli_fetch_assoc($result)) {
+        ?>
+            <div class="card">
+                <div class="cardimg">
+                    <img src="<?= $row['image'] ?>" alt="" style="width:200px;height:250px;">
+                </div>
+                <div class="card-content">
+                    <h3><?= $row['name'] ?></h3>
+                    <p class="description"><?= $row['description'] ?></p>
+                    <a href="product-item.php?category_id=<?= $row['id'] ?>" class="card-btn">Show Products</a>
+                </div>
             </div>
-            <div class="card-section">
-                <div class="card">
-                    <div class="cardimg">
-                        <img src="./css/shirt.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <h3>Shirt</h3>
-                        <p class="description">Lorem ipsum dolor sit amet.</p>
-                        <a href="" class="card-btn">See more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardimg">
-                        <img src="./css/shirt.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <h3>Shirt</h3>
-                        <p class="description">Lorem ipsum dolor sit amet.</p>
-                        <a href="" class="card-btn">See more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardimg">
-                        <img src="./css/shirt.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <h3>Shirt</h3>
-                        <p class="description">Lorem ipsum dolor sit amet.</p>
-                        <a href="" class="card-btn">See more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardimg">
-                        <img src="./css/shirt.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <h3>Shirt</h3>
-                        <p class="description">Lorem ipsum dolor sit amet.</p>
-                        <a href="" class="card-btn">See more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardimg">
-                        <img src="./css/shirt.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <h3>Shirt</h3>
-                        <p class="description">Lorem ipsum dolor sit amet.</p>
-                        <a href="" class="card-btn">See more</a>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="cardimg">
-                        <img src="./css/shirt.png" alt="">
-                    </div>
-                    <div class="card-content">
-                        <h3>Shirt</h3>
-                        <p class="description">Lorem ipsum dolor sit amet.</p>
-                        <a href="" class="card-btn">See more</a>
-                    </div>
-                </div>
-                
-            </div>
-
-
-        </div>
+        <?php
+        }
+        ?>
+    </div>
+</div>
