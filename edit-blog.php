@@ -3,32 +3,43 @@
 session_start();
 include_once("conn.php");
 $id = $_GET["id"];
+
 if (isset($_POST['submit'])) {
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $date = $_POST['date'];
-    $targetDir = "uploads/";
-    $targetFile = $targetDir . basename($_FILES["image"]["name"]);
-    $uploadOk = 1;
-    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-    $image = $_FILES["image"];
-    $img_loc = $_FILES['image']['tmp_name'];
-    $img_name = $_FILES['image']['name'];
-    $path = "./uploads/" . $img_name;
-    move_uploaded_file($img_loc, './uploads/' . $img_name);
-    $sql = "UPDATE blogs SET title='$title',description='$description',date='$date',image='$path' WHERE id='$id'";
-    $result = mysqli_query($conn, $sql);
-    if ($result) {
-        echo "<script>alert('Blog Updated Successfully')</script>";
-        echo "<script>window.location.href='./blogs.php'</script>";
-    } else {
-        echo "<script>alert('Blog Inserted Failed')</script>";
+    $title = mysqli_real_escape_string($conn, $_POST['title']);
+    $description = mysqli_real_escape_string($conn, $_POST['description']);
+    $date = mysqli_real_escape_string($conn, $_POST['date']);
+    
+    // Use prepared statements to safely update data in the database
+    $stmt = $conn->prepare("UPDATE blogs SET title=?, description=?, date=?, image=? WHERE id=?");
+    
+    if ($stmt) {
+        // Bind parameters
+        $stmt->bind_param("ssssi", $title, $description, $date, $path, $id);
+
+        $targetDir = "uploads/";
+        $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+        $uploadOk = 1;
+        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+        $image = $_FILES["image"];
+        $img_loc = $_FILES['image']['tmp_name'];
+        $img_name = $_FILES['image']['name'];
+        $path = "./uploads/" . $img_name;
+        move_uploaded_file($img_loc, './uploads/' . $img_name);
+
+        // Execute the prepared statement
+        if ($stmt->execute()) {
+            echo "<script>alert('Blog Updated Successfully')</script>";
+            echo "<script>window.location.href='./blogs.php'</script>";
+        } else {
+            echo "<script>alert('Blog Update Failed')</script>";
+        }
+        
+        // Close the statement
+        $stmt->close();
     }
 }
-
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +58,7 @@ if (isset($_POST['submit'])) {
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -83,7 +94,7 @@ if (isset($_POST['submit'])) {
                         
                         ">
                         <label for="description">Description</label>
-                        <input type="text" name="description" class="form-control" value="
+                        <textarea type="text" name="description" class="form-control" value="
                         <?php
                         $sql = "SELECT * FROM blogs WHERE id='$id'";
                         $result = mysqli_query($conn, $sql);
@@ -93,7 +104,7 @@ if (isset($_POST['submit'])) {
                             }
                         }
                         ?>
-                        ">
+                        "> </textarea>
                         <label for="date">Date</label>
                         <input type="date" name="date" class="form-control" value="
                         <?php

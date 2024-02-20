@@ -1,4 +1,6 @@
-
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +18,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -35,7 +37,6 @@
                     <h1 class="title-item">Edit Product</h1>
                 </div>
                 <?php
-                session_start();
                 include_once "conn.php";
                 $id = $_GET['id'];
                 if(isset($_POST['submit'])){

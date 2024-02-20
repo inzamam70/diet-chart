@@ -1,12 +1,13 @@
 
 
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nutri-Flames</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/product.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -22,41 +23,45 @@
         <?php include('./header.php') ?>
         <!-- header end -->
 
-        <div class="service">
+        <div class="service" style="margin-top:20px;">
             <div class="service-heading">
                 <h1>Products</h1>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
             </div>
-            <div class="card-section-item">
+            <div class="product-card-section-item">
                 <?php
                 include_once "conn.php";
-                $categoryId = $_GET['category_id'];
-                $sql = "SELECT * FROM products WHERE category_id = $categoryId";
-              
+                $category_id = $_GET['category_id'];
+          
+                $sql = "SELECT * FROM products WHERE category_id = $category_id";
                 $id = 1;
-
                 $result = mysqli_query($conn, $sql);
-                while ($row = mysqli_fetch_assoc($result)) {
-                    ?>
-
-                <div class="product-card-item">
-                    <div class="card-img-item">
-                        <img src="<?= $row['image'] ?>" alt="" style="width:200px;height:200px;">
+                if ($result) {
+                    if (mysqli_num_rows($result) > 0) {
+                        while ($row = mysqli_fetch_assoc($result)) {
+                             ?>
+        
+                <div class="product-card-item-p">
+                    <div class="card-item-img-p">
+                        <img src="<?php echo $row['image'] ?>" alt="">
                     </div>
-                    <div class="product-card-content-item">
-                        <h3><?= $row['title'] ?></h3>
-                        <p class="description-item">Price=<?= $row['price'] ?>/-</p>
-                        <a href="detail.php?id=<?= $row['id'] ?>" class="card-btn-item">Show Details</a>
+                    <div class="card-item-content-p">
+                        <h3><?php echo $row['title'] ?></h3>
+                        <div class="card-item-content-price">
+                            <h4>Price: <?php echo $row['price'] ?></h4>
+                        </div>
+
+                        <a href="detail.php?id=<?= $row['id']?>">View Details</a>
+                        
                     </div>
                 </div>
-
-
-                <?php } ?>
+                <?php
+                        }
+                    }
+                }
+                ?>
             </div>
-
-   
-
-</div>
+        </div>
 
         <!-- footer -->
         <?php include('./footer.php') ?>

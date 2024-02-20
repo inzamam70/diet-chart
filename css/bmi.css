@@ -28,7 +28,7 @@
     top: 40px;
     width: 350px;
     height: calc(100% - 80px);
-    background: #0f3959;
+    background: #068811;
     z-index: 1;
     padding: 40px;
     display: flex;
@@ -53,7 +53,7 @@
     box-shadow: 0 50px 50px rgba(0,0,0,0.5);
 }
 .contact-form h2{
-    color: #0f3959;
+    color: #068811;
     font-size: 24px;
     font-weight: 600;
 }
@@ -110,7 +110,7 @@
 }
 .inputbox input[type="submit"]{
     position: relative;
-    background: #0f3959;
+    background: #068811;
     color: #fff;
     border: none;
     max-width: 150px;

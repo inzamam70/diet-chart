@@ -17,5 +17,5 @@
         <li><a href="">Specialist</a></li>
         <li><a href="./login.php">Login</a></li>
     </ul>
-    <p class="footer-p">© 2023 All Rights Reserved. Developed By <a href="">Inzamam islam Raj</a></p>
+    <p class="footer-p">© 2023 All Rights Reserved <a href="">nusrat</a></p>
 </div>

@@ -51,6 +51,25 @@
         </li>
 
         <li class="menu">
+            <a href="charts.php" class="dropdown">
+                <div>
+                <i class="fa-solid fa-chart-simple"></i>
+                    Diet Charts
+                </div>
+            </a>  
+        </li>
+
+        
+        <li class="menu">
+            <a href="dietitians.php" class="dropdown">
+                <div>
+                <i class="fa-solid fa-user-doctor"></i>
+                    Dietitians
+                </div>
+            </a>  
+        </li>
+
+        <li class="menu">
             <a href="" class="dropdown">
                 <div>
                     <i class="fa-brands fa-first-order"></i>

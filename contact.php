@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nutri-Flames</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/contact.css">
@@ -31,13 +31,17 @@
                             </li>
                             <li>
                                 <span><img src="./css/email.png" alt=""></span>
-                                <span>70inzamam.sentinel@gmail.com</span>
+                                <span>nusrat@gmail.com</span>
                             </li>
                             <li>
                                 <span><img src="./css/call.png" alt=""></span>
                                 <span>01865016322</span>
                             </li>
                         </ul>
+
+                        <h2>Qr Code</h2>
+                        <br>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=nusrat@gmail.com 01865016322 Dhaka" alt="" style="width:100px;height:100px;">
 
                     </div>
                     <ul class="sci">

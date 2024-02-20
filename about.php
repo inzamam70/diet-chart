@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nutri-Flames</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -23,16 +23,13 @@
         <div class="about">
             <div class="heading">
                 <h1>About us</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore, numquam!</p>
+                <p></p>
             </div>
             <div class="about-section">
                 <img src="./css/fitness.jpg" alt="">
                 <div class="content">
-                    <h2>Lorem ipsum dolor sit amet.</h2>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellendus libero voluptate quia sequi
-                        dicta Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias, delectus. Repellat
-                        ratione et error dicta a necessitatibus, minima accusantium sequi beatae, ducimus veniam, minus
-                        sapiente.</p>
+                    <h2></h2>
+                    <p>Our mission is to share flavor-packed recipes from around the world, celebrating fresh ingredients and the farmers, artisans and chefs who bring them to our table. Through science-backed wellness advice and smart stories about sustainability, we help readers live their best lives. We are about moderation and balance—not strict rules or fad diets—because for eating well to become a way of life, it should be accessible, sustainable, inspiring and above all delicious</p>
                     <a href="" class="read-more-btn">Read more</a>
                 </div>
             </div>

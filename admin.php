@@ -23,7 +23,7 @@ if (!isset($_SESSION['admin_name'])) {
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -35,28 +35,39 @@ if (!isset($_SESSION['admin_name'])) {
         <?php include('admin-nav.php') ?>
 
         <div class="body">
-            <h1>Health Care</h1>
+            <h1>Nutri-Flames</h1>
 
-            <div class="">
-                <a href="" class="btn btn-success "><i class="fa-solid fa-file" style="padding: 5px;"></i>New </a>
+            <div class="btn-card">
+                <?php
+                include_once 'conn.php';
+                $sql = "SELECT * FROM products";
+                $result = mysqli_query($conn, $sql);
+                $count = mysqli_num_rows($result);
+                ?>
+                <a href="users.php" class="btn-card-a"><i class="fa-solid fa-file" style="padding: 5px;"></i>New <span><sup><?=$count?></sup></span></a>
                 <?php 
                 include_once 'conn.php';
                 $sql = "SELECT * FROM users";
                 $result = mysqli_query($conn, $sql);
                 $count = mysqli_num_rows($result);
                 ?>
-                <a href="" class="btn btn-primary"><i class="fa-solid fa-users" style="padding: 5px;"></i>Users <span><sup><?=$count?></sup></span></a>
+                <a href="#user" class="btn-card-a"><i class="fa-solid fa-users" style="padding: 5px;"></i>Users <span><sup><?=$count?></sup></span></a>
                 <?php 
                  $sql = "SELECT * FROM contact";
                     $result = mysqli_query($conn, $sql);
                     $count = mysqli_num_rows($result);
                 ?>
-                <a href="" class="btn btn-warning"><i class="fa-solid fa-users" style="padding: 5px;"></i>Massages <span><sup><?=$count?></sup></span></a>
-                <a href="" class="btn btn-danger"><i class="fa-solid fa-check" style="padding: 5px;"></i>Finished</a>
+                <a href="#sms" class="btn-card-a"><i class="fa-solid fa-comments" style="padding: 5px;"></i>Massages <span><sup><?=$count?></sup></span></a>
+                <?php 
+                 $sql = "SELECT * FROM payment";
+                    $result = mysqli_query($conn, $sql);
+                    $count = mysqli_num_rows($result);
+                    ?>
+                <a href="tranjection.php" class="btn-card-a"><i class="fa-solid fa-check" style="padding: 5px;"></i>Finished <span><sup><?=$count?></sup></span></a>
 
             </div>
             <div class="admin-table">
-               <div class="table-sms">
+               <div class="table-sms" id="sms">
                <h2>Massages</h2>
                 <table class="table table-striped table-hover">
                     <thead>
@@ -88,7 +99,7 @@ if (!isset($_SESSION['admin_name'])) {
                 </table>
                </div>
 
-               <div class="table-user">
+               <div class="table-user" id="user">
                <h2>Users</h2>
           
                 <table class="table table-striped table-hover">

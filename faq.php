@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nutri-Flames</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/faq.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -33,7 +33,7 @@
                     <h3>How do I order?</h3>
                 </label>
                 <div class="faq-content">
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquam, veritatis.</p>
+                    <p>To order food, visit the website's menu section, select items, and proceed to the checkout or order page. Follow the prompts to enter delivery details and payment information. If you encounter issues, check for a "Help" or "Contact" section..</p>
                 </div>
             </div>
 

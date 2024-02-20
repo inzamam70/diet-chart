@@ -1,0 +1,207 @@
+
+.product-details{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #00f736;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0px 0px 5px 0px #3af700;
+}
+.product-details-img{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+.product-details-img img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    border-radius: 10px;
+}
+.product-details-content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.product-details-content h3{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #348306;
+}
+.product-details-content p{
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e071f;
+}
+
+.product-details-content .quality{
+    margin-top: 10px;
+    background: green;
+    text-align: center;
+    width: 100px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.product-details-content .star{
+    padding: 20px 0px;
+    margin-bottom: 5px;
+    color: rgb(253, 187, 5);
+
+}
+.product-details-content .star i{
+    font-size: 1.5rem;
+}
+.submit-btn{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    background: #1df700;
+    padding: 10px 0px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+}
+.submit-btn:hover{
+    background: #1e071f;
+}
+.card-section-item table{
+    width: 100%;
+}
+.card-section-item table tr td{
+    padding: 10px 0px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #1e071f;
+    text-align: center;
+    border: 1px solid #068811;
+}
+.card-section-item table th{
+    padding: 10px 0px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background: #068811;
+    color: #ffffff;
+}
+.quantity_box{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    gap: 20px;
+}
+.quantity_box input{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #068811;
+    border: 1px solid #1e071f;
+    border-radius: 5px;
+    outline: none;
+    background: #ffffff;
+
+}
+.quantity_box .update_quantity{
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    border: 1px solid #1e071f;
+    border-radius: 5px;
+    outline: none;
+    background: #068811;
+    cursor: pointer;
+}
+.table_bottom{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    gap: 20px;
+    background: #068811;
+    padding: 10px 0px;
+}
+.bottom_btn{
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    padding: 10px 10px;
+}
+.delete_btn{
+   color: red;
+}
+.apoinment-form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: #ddd;
+    padding: 20px;
+}
+.apoinment-form h2{
+    font-size: 2rem;
+    font-weight: 600;
+    color: #000000;
+}
+.apoinment-form form{
+    width: 680px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.apoinment-form form .appoinment-input{
+    width: 100%;
+    height: 50px;
+    margin-top: 10px;
+    padding: 0px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    background: #ffffff;
+}
+.apoinment-btn{
+    width: 100%;
+    height: 50px;
+    margin-top: 20px;
+    padding: 0px 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 5px;
+    outline: none;
+    background: #ff0000;
+    cursor: pointer;
+}

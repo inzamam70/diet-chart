@@ -1,4 +1,4 @@
-<?php session_start()?>
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +16,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -36,47 +36,56 @@
                 </div>
                 <?php
                 include_once("conn.php");
+
                 if (isset($_POST["submit"])) {
-                    $title = $_POST["title"];
+                    $title = mysqli_real_escape_string($conn, $_POST["title"]);
+                    $description = mysqli_real_escape_string($conn, $_POST["description"]);
+                    $date = mysqli_real_escape_string($conn, $_POST["date"]);
 
-                    $description = $_POST["description"];
-                    $date = $_POST["date"];
+                    // Use prepared statements to safely insert data into the database
+                    $stmt = $conn->prepare("INSERT INTO blogs (title, description, date, image) VALUES (?, ?, ?, ?)");
 
-                    $targetDir = "uploads/";
-                    $targetFile = $targetDir . basename($_FILES["image"]["name"]);
-                    $uploadOk = 1;
-                    $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+                    if ($stmt) {
+                        // Bind parameters
+                        $stmt->bind_param("ssss", $title, $description, $date, $path); // Adjust 's' types as per your database schema
+                
+                        $targetDir = "uploads/";
+                        $targetFile = $targetDir . basename($_FILES["image"]["name"]);
+                        $uploadOk = 1;
+                        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
 
-                    $image = $_FILES["image"];
+                        $image = $_FILES["image"];
+                        $img_loc = $_FILES['image']['tmp_name'];
+                        $img_name = $_FILES['image']['name'];
+                        $path = "./uploads/" . $img_name;
+                        move_uploaded_file($img_loc, './uploads/' . $img_name);
 
-                    $img_loc = $_FILES['image']['tmp_name'];
+                        // Execute the prepared statement
+                        if ($stmt->execute()) {
+                            echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>Success!</strong> Blog Added Successfully.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+                        } else {
+                            echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                <strong>Error!</strong> Blog Not Added.
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>';
+                        }
 
-                    $img_name = $_FILES['image']['name'];
-                    $path = "./uploads/" . $img_name;
-                    move_uploaded_file($img_loc, './uploads/' . $img_name);
-                    $sql = "INSERT INTO blogs(title,description,date,image) VALUES('$title','$description','$date','$path')";
-                    $result = mysqli_query($conn, $sql);
-                    if ($result) {
-                        echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
-                        <strong>Success!</strong> Blog Added Successfully.
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                      </div>';
-                    } else {
-                        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
-                            <strong>Error!</strong> Blog Not Added.
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>';
+                        // Close the statement
+                        $stmt->close();
                     }
                 }
-
                 ?>
+
 
                 <div class="form">
                     <form action="" class="form-item" method="post" enctype="multipart/form-data">
                         <label for="title">Title</label>
                         <input type="text" name="title" class="form-control" placeholder="Enter Title">
                         <label for="description">Description</label>
-                        <input type="text" name="description" class="form-control" placeholder="Enter Description">
+                        <textarea name="description" class="form-control" placeholder="Enter Description"></textarea>
                         <label for="date">Date</label>
                         <input type="date" name="date" class="form-control" placeholder="Enter Date">
                         <label for="image">Image</label>

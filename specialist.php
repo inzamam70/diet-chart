@@ -1,7 +1,7 @@
 <div class="service">
     <div class="service-heading">
         <h1>Our Specialist</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, et?</p>
+        <p></p>
     </div>
 
     <div class="special-card-container">
@@ -19,10 +19,10 @@
                     <h2><?= $row['name']?></h2>
                     <p><?=$row['description']?></p>
                     <div class="special-social-icon">
-                        <a href=""><i class="fa fa-brands fa-twitter"></i></a href="">
-                        <a href=""><i class="fa fa-brands fa-facebook"></i></a href="">
-                        <a href=""><i class="fa fa-brands fa-youtube"></i></a href="">
-                        <a href=""><i class="fa fa-brands fa-instagram"></i></a href="">
+                        <a href="<?=$row['twitter']?>"><i class="fa fa-brands fa-twitter"></i></a>
+                        <a href="<?=$row['facebook']?>"><i class="fa fa-brands fa-facebook"></i></a>
+                        <a href="<?=$row['youtube']?>"><i class="fa fa-brands fa-youtube"></i></a>
+                        <a href="<?=$row['insta']?>"><i class="fa fa-brands fa-instagram"></i></a>
                     </div>
                 </div>
             </div>

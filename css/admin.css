@@ -42,7 +42,7 @@ body {
 }
 
 .nav-item ul li a {
-    color: rgb(99, 5, 107);
+    color: rgb(0, 0, 0);
     font-size: 14px;
     text-decoration: none;
     font-weight: bold;
@@ -160,6 +160,7 @@ body {
 
 .admin-table{
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
@@ -167,7 +168,7 @@ body {
     margin-top: 30px;
 }
 .table-sms{
-    width: 700px;
+    width: 100%;
     height: 100%;
     background: #fff;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -200,7 +201,7 @@ body {
     background: #259fc4;
 }
 .table-user{
-    width: 500px;
+    width: 100%;
     height: 100%;
     background: #f07070;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
@@ -232,4 +233,44 @@ body {
 }
 .table-user tbody tr:nth-child(2){
     background: #ffffff;
+}
+.btn-card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;  
+    margin-top: 30px;
+}
+.btn-card-a{
+    width: 200px;
+    height: 100px;
+    background: #0b7575;
+    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+}
+.btn-card a{
+    text-decoration: none;
+    color: #ffd900;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px;
+    transition: 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.btn-card a:hover{
+    background: #f79cf2;
+    border-left: solid #ad29b9;
+}
+.btn-card i {
+    color: #000000;
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.5s;
+    margin-right: 10px;
 }

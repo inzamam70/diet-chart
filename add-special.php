@@ -17,7 +17,7 @@
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -39,22 +39,21 @@
                 include_once("conn.php");
                 if (isset($_POST["submit"])) {
                     $name = $_POST["name"];
-
                     $description = $_POST["description"];
-
+                    $twitter = $_POST["twitter"];
+                    $facebook = $_POST["facebook"];
+                    $youtube = $_POST["youtube"];
+                    $insta = $_POST["insta"];
                     $targetDir = "uploads/";
                     $targetFile = $targetDir . basename($_FILES["image"]["name"]);
                     $uploadOk = 1;
                     $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-
                     $image = $_FILES["image"];
-
                     $img_loc = $_FILES['image']['tmp_name'];
-
                     $img_name = $_FILES['image']['name'];
                     $path = "./uploads/" . $img_name;
                     move_uploaded_file($img_loc, './uploads/' . $img_name);
-                    $sql = "INSERT INTO special(name,description,image) VALUES('$name','$description','$path')";
+                    $sql = "INSERT INTO `special` (`name`, `description`, `twitter`, `facebook`, `youtube`, `insta`, `image`) VALUES ('$name', '$description', '$twitter', '$facebook', '$youtube', '$insta', '$path')";
                     $result = mysqli_query($conn, $sql);
                     if ($result) {
                         echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -77,6 +76,14 @@
                         <input type="text" name="name" class="form-control" placeholder="Enter name">
                         <label for="description">Description</label>
                         <input type="text" name="description" class="form-control" placeholder="Enter Description">
+                        <label for="twitter">Twitter</label>
+                        <input type="text" name="twitter" class="form-control" placeholder="Enter twitter account name">
+                        <label for="facebook">Facebook</label>
+                        <input type="text" name="facebook" class="form-control" placeholder="Enter facebook account name">
+                        <label for="youtube">Youtube</label>
+                        <input type="text" name="youtube" class="form-control" placeholder="Enter youtube account name">
+                        <label for="insta">Instagram</label>
+                        <input type="text" name="insta" class="form-control" placeholder="Enter insta account name">
                         <label for="image">Image</label>
                         <input type="file" name="image" class="form-control" accept="image/*">
                         <input type="submit" class="btn btn-danger" value="Submit" name="submit" style="width:100%;">

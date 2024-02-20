@@ -1,7 +1,7 @@
 <div class="service">
     <div class="service-heading">
         <h1>Our Service</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.</p>
+        <p></p>
     </div>
     <div class="card-section">
         <?php
@@ -11,8 +11,8 @@
         $id = 1;
         while ($row = mysqli_fetch_assoc($result)) {
         ?>
-            <div class="card">
-                <div class="cardimg">
+            <div class="card" >
+                <div class="cardimg" >
                     <img src="<?= $row['image'] ?>" alt="">
                 </div>
                 <div class="card-content">

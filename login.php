@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
             header('location:admin.php');
         } else {
             $_SESSION['user_name'] = $row['name'];
-            header('location:index.php');
+            header('location:payment.php');
         }
     } else {
         $error[] = 'incorrect email or password!';
@@ -35,7 +35,7 @@ if (isset($_POST['submit'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nutri-Flames</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/login.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -56,11 +56,11 @@ if (isset($_POST['submit'])) {
                 <div class="login-content">
                     <div class="img">
                         <img src="./css/fruit-chart.png" alt="">    
-                        <h2 class="logo"> Diet-Chart</h2>
+                        <h2 class="logo"> Nutri-Flames</h2>
                     </div>
                     <div class="text-sci">
                         <h2>Welcome! <br><span>To our Website</span></h2>
-                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorum, veniam.</p>
+                        <p>At Nutri-Flames, we're thrilled to be your go-to destination for delicious and nutritionally balanced meals and we're here to make your journey to wellness both convenient and delightful.</p>
                     </div>
                     <div class="social-icons">
                         <a href=""><i class='bx bxl-linkedin'></i></a>
@@ -100,7 +100,7 @@ if (isset($_POST['submit'])) {
                             </div>
                             <button type="submit" name="submit" class="log-btn">Sign In</button>
                             <div class="login-register">
-                                <p>Don't have anaccount? <a href="./register.php" class="register-link">Sign up</a></p>
+                                <p>Don't have an account? <a href="./register.php" class="register-link">Sign up</a></p>
                             </div>
                         </form>
                     </div>

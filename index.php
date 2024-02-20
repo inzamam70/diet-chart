@@ -1,10 +1,3 @@
-<?php 
-session_start();
-include_once('conn.php');
-if (!isset($_SESSION['user_name'])) {
-    header('location:login.php');
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,7 +5,7 @@ if (!isset($_SESSION['user_name'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=h1, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nutri-Flames</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/special.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"

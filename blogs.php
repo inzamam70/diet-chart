@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="./css/admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -62,7 +62,7 @@
                                     <tr>
                                         <td><?php echo $id++ ?></td>
                                         <td><?php echo $row['title'] ?></td>
-                                        <td><?php echo $row['description'] ?></td>
+                                        <td ><?php echo $row['description'] ?></td>
                                         <td><?php echo $row['date'] ?></td>
                                         <td><img src="<?php echo $row['image'] ?> " width='100px' height='70px'></td>
                                         <td>

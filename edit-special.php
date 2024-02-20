@@ -7,6 +7,10 @@ $id = $_GET["id"];
 if (isset($_POST['submit'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
+    $twitter = $_POST['twitter'];
+    $facebook = $_POST['facebook'];
+    $youtube = $_POST['youtube'];
+    $insta = $_POST['insta'];
     $targetDir = "uploads/";
     $targetFile = $targetDir . basename($_FILES["image"]["name"]);
     $uploadOk = 1;
@@ -16,7 +20,7 @@ if (isset($_POST['submit'])) {
     $img_name = $_FILES['image']['name'];
     $path = "./uploads/" . $img_name;
     move_uploaded_file($img_loc, './uploads/' . $img_name);
-    $sql = "UPDATE special SET name='$name',description='$description',image='$path' WHERE id='$id'";
+    $sql = "UPDATE `special` SET `name`='$name',`description`='$description',`twitter`='$twitter',`facebook`='$facebook',`youtube`='$youtube',`insta`='$insta',`image`='$path' WHERE id='$id'";
     $result = mysqli_query($conn, $sql);
     if ($result) {
         echo "<script>alert('Specilist Updated Successfully')</script>";
@@ -47,7 +51,7 @@ if (isset($_POST['submit'])) {
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <title>Hello, world!</title>
+    <title>Nutri-Flames</title>
 </head>
 
 <body>
@@ -94,6 +98,56 @@ if (isset($_POST['submit'])) {
                         }
                         ?>
                         ">
+                        <label for="twitter">Twitter</label>
+                        <input type="text" name="twitter" class="form-control" value="
+                        <?php
+                        $sql = "SELECT * FROM special WHERE id='$id'";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row['twitter'];
+                            }
+                        }
+                        ?>
+                        ">
+                        <label for="facebook">Facebook</label>
+                        <input type="text" name="facebook" class="form-control" value="
+                        <?php
+                        $sql = "SELECT * FROM special WHERE id='$id'";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row['facebook'];
+                            }
+                        }
+                        ?>
+                        ">
+                        <label for="youtube">Youtube</label>
+                        <input type="text" name="youtube" class="form-control" value="
+                        <?php
+                        $sql = "SELECT * FROM special WHERE id='$id'";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row['youtube'];
+                            }
+                        }
+                        ?>
+                        ">
+                        <label for="insta">Instagram</label>
+                        <input type="text" name="insta" class="form-control" value="
+                        <?php
+
+                        $sql = "SELECT * FROM special WHERE id='$id'";
+                        $result = mysqli_query($conn, $sql);
+                        if (mysqli_num_rows($result) > 0) {
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                echo $row['insta'];
+                            }
+                        }
+                        ?>
+                        ">
+                        
 
                         <label for="image">Image</label>
                         <input type="file" name="image" class="form-control" accept="image/*" value="
